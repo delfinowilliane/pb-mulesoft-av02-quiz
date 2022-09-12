@@ -1,0 +1,55 @@
+package br.com.pbmulesoft.quiz;
+
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+
+import DAO.QuestaoDao;
+import br.com.pbmulesoft.quiz.modelo.Resultado;
+import br.com.pbmulesoft.quiz.util.JPAUtil;
+
+public class ProgramaTeste {
+	
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Seja bem vindo ao fandom quiz sobre Harry Potter");	
+		System.out.println();
+		System.out.println("Opções: ");
+		System.out.println("\n 1 Jogar \n 2 Ver Placar \n 0 Sair");
+		
+		int escolha = scan.nextInt();
+				
+		switch (escolha) {
+		case 1:
+			EntityManager em = JPAUtil.getEntityManager();
+			Resultado jogador = new Resultado();
+			System.out.println("Nome do jogador: ");
+			jogador.setJogador(scan.next());
+			
+			jogador.setAcertos(0);
+			jogador.setErros(0);
+			
+			QuestaoDao questaoDao = new QuestaoDao();
+			
+			
+			break;
+		case 2:
+			//placar
+			break;
+		case 0:
+			//Saindo...
+			break;
+		default:
+			//Número Inválido;
+		}
+	}
+
+
+//	métodoquiz
+	public static void quiz() {
+		
+	}
+
+	
+}

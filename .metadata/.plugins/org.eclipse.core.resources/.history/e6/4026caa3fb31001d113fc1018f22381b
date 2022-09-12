@@ -1,0 +1,31 @@
+package br.com.pbmulesoft.quiz.menu;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import DAO.QuestaoDao;
+import DAO.ResultadoDao;
+import br.com.pbmulesoft.quiz.modelo.Resultado;
+import br.com.pbmulesoft.quiz.util.JPAUtil;
+
+public class VerPlacar {
+
+	EntityManager em = JPAUtil.getEntityManager();
+	QuestaoDao questaoDao = new QuestaoDao(em);
+	ResultadoDao resultadoDao = new ResultadoDao(em);
+
+	public String[] Placar() {
+
+		List<Resultado> verPlacar = resultadoDao.buscarResultadoDecrescente();
+		String[] arrayPlacar = new String[verPlacar.size()];
+
+		for (int i = 0; i < verPlacar.size(); i++) {
+
+			arrayPlacar[i] = "JOGADOR: " + verPlacar.get(i).getJogador() + "  ACERTOS: " + verPlacar.get(i).getAcertos()
+					+ "  DATA: " + verPlacar.get(i).getDataDaPartida();
+		}
+
+		return arrayPlacar;
+	}
+}

@@ -1,0 +1,16 @@
+package br.com.pbmulesoft.quiz.programa;
+
+import java.util.Scanner;
+
+public class BoasVindasDoQuiz {
+	public static void BoasVindas() {
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("Seja bem vindo ao fandom quiz sobre Harry Potter");
+		System.out.println();
+		System.out.println("Nome do jogador: ");
+		String nome = scanner.nextLine();
+		
+	}
+}

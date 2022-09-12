@@ -1,0 +1,13 @@
+package br.com.pbmulesoft.quiz.programa;
+
+import java.util.List;
+import br.com.pbmulesoft.quiz.modelo.Questao;
+
+public class Teste {
+	
+
+	List<Questao> todasAsQuestoes() {
+		return todasAsQuestoes();
+	}
+	
+}

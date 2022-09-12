@@ -1,0 +1,80 @@
+package br.com.pbmulesoft.quiz.programa;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+import br.com.pbmulesoft.quiz.menu.SalvarResultados;
+import br.com.pbmulesoft.quiz.menu.SelecionarQuestoes;
+import br.com.pbmulesoft.quiz.menu.VerPlacar;
+import br.com.pbmulesoft.quiz.menu.VerificarRespostas;
+import br.com.pbmulesoft.quiz.modelo.Resultado;
+
+public class Programa {
+
+	public static void main(String[] args) {
+
+		SelecionarQuestoes listar = new SelecionarQuestoes();
+		VerificarRespostas verifica = new VerificarRespostas();
+		int opcao = 1;
+
+		try (Scanner scanner = new Scanner(System.in)) {
+
+			do {
+				System.out.println("Seja bem vindo ao fandom quiz sobre Harry Potter");
+				System.out.println();
+
+				Quiz(listar.SelecaoQuestoes(), verifica.Respostas(), scanner);
+				System.out.println("Opções: ");
+				System.out.println("\n 1 - Jogar Novamente \n 2 - Ver Placar \n 0 - Sair ");
+				scanner.next();
+
+				if (opcao == 2) {
+
+					VerPlacar placar = new VerPlacar();
+					System.out.println(placar);
+					
+					System.out.println("Opções: ");
+					System.out.println("\n 1 - Jogar Novamente \n 2 - Ver Placar \n 0 - Sair ");
+					scanner.next();
+
+				}
+
+			} while (opcao != 0);
+
+		}
+	}
+
+	public static void Quiz(String[] questoes, boolean verifica, Scanner scanner) {
+		int acertos = 0;
+		int erros = 0;
+		LocalDate dataDaPartida = LocalDate.now();
+		System.out.print("Nome do jogador: ");
+		String jogador = scanner.nextLine();
+
+		for (int i = 0; i < questoes.length; i++) {
+			System.out.println(questoes[i]);
+			System.out.println("Verdadeiro(1) ou Falso(0)?");
+			System.out.println("Digite sua resposta: ");
+			String resposta = scanner.nextLine();
+
+			if (resposta.equals(verifica)) {
+				acertos++;
+				System.out.println("Você Acertou!");
+
+			} else {
+				erros++;
+				System.out.println("Você errou!");
+
+			}
+
+		}
+		System.out.println("Jogador: " + jogador);
+		System.out.println("Acertos: " + acertos);
+		System.out.println("Erros: " + (10 - erros));
+
+		Resultado resultado = new Resultado(jogador, acertos, erros, dataDaPartida);
+		SalvarResultados salvar = new SalvarResultados();
+		salvar.salvarResultado(resultado);
+	}
+
+}

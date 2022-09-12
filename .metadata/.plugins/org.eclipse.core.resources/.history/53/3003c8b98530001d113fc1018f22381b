@@ -1,0 +1,38 @@
+package br.com.pbmulesoft.quiz.modelo;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "RESULTADOS")
+public class Resultado {
+
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Column(name = "JOGADOR")
+	private String jogador;
+	@Column(name = "ACERTOS")
+	private int acertos;
+	@Column(name = "ERROS")
+	private int erros;
+	@Column(name = "DATA")
+	private LocalDate dataDaPartida = LocalDate.now();;
+	
+	public Resultado() {
+	}
+	
+	public Resultado(String jogador, int acertos, int erros, LocalDate data) { 
+		this.jogador = jogador;
+		this.acertos = acertos;
+		this.erros = erros;
+		this.dataDaPartida = data;
+	}
+
+	
+}

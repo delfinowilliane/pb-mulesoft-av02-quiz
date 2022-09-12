@@ -1,0 +1,44 @@
+package br.com.pbmulesoft.quiz.programa;
+
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+
+import DAO.QuestaoDao;
+import DAO.ResultadoDao;
+import br.com.pbmulesoft.quiz.modelo.Resultado;
+import br.com.pbmulesoft.quiz.util.JPAUtil;
+
+public class Programa {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("Seja bem vindo ao fandom quiz sobre Harry Potter");
+		System.out.println();
+		System.out.println("Nome do jogador: ");
+		String jogador = scanner.nextLine();
+		
+		//ele joga uma vez
+		
+		System.out.println("Opções: ");
+		System.out.printf("1 - Jogar", "%n 2 - Ver Placar", "%n 3 - Sair");		
+	}
+
+		
+	
+	
+	
+	// setar seleção de perguntas que estão no banco de dados (boolean active)
+	// responder com v ou f
+	// já receber a cada questao se acertou ou errou
+
+	// salvar respostas e LocalDate no banco de dados
+	// ao final receber seu resultado e voltar ao menu inicial
+	// se clicar em 1 ele pode fazer tudo de novo
+	// se clicar em 2 ele pode obter todos os resultados das jogadas no banco de
+	// dados
+	// EM ORDEM DECRESCENTE PELO NUMERO DE ACERTOS
+	// se clicar em 0 sai do programa (close/encerrar)
+}

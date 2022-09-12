@@ -1,0 +1,23 @@
+package br.com.pbmulesoft.quiz;
+
+import javax.persistence.EntityManager;
+
+import DAO.QuestaoDao;
+import br.com.pbmulesoft.quiz.modelo.Questao;
+import br.com.pbmulesoft.quiz.util.JPAUtil;
+
+
+public class InserirQuestoesDB {
+	public static void main(String[] args) {
+		Questao questao1 = new Questao("Harry Potter nasceu em 1980","true","false");
+		
+		EntityManager em = JPAUtil.getEntityManager();
+		QuestaoDao questaoDao = new QuestaoDao(em);
+				
+		em.getTransaction().begin();
+		questaoDao.cadastrar(questao1);
+		em.persist(questao1);
+		em.getTransaction().commit();
+		em.flush();
+	}
+}

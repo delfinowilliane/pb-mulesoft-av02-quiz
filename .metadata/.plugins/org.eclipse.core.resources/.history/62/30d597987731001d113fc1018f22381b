@@ -1,0 +1,65 @@
+package br.com.pbmulesoft.quiz.programa;
+
+import java.util.List;
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+
+import DAO.QuestaoDao;
+import DAO.ResultadoDao;
+import br.com.pbmulesoft.quiz.modelo.Questao;
+import br.com.pbmulesoft.quiz.util.JPAUtil;
+
+public class Programa {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("Seja bem vindo ao fandom quiz sobre Harry Potter");
+		System.out.println();
+		System.out.println("Nome do jogador: ");
+		String nome = scanner.nextLine();
+
+	}
+	
+	EntityManager em = JPAUtil.getEntityManager();
+	QuestaoDao questaoDao = new QuestaoDao(em);
+	
+	public void ativar(Questao q) {
+		
+
+		em.getTransaction().begin();
+		q = em.merge(q);
+		q.setAtiva(true);
+		em.getTransaction().commit();
+
+	}
+
+	public void desativar(Questao q) {
+		
+		List <Questao> todas = questaoDao.todasAsQuestoes();
+		em.clear();
+		Questao questaol = new Questao();
+		em.getTransaction();
+		QuestaoDao questaoDao = new QuestaoDao(em);
+		
+		em.getTransaction().begin();
+		q = em.merge(q);
+		q.setAtiva(true);
+		em.getTransaction().commit();
+
+	}
+
+	// setar seleção de perguntas que estão no banco de dados (boolean active)
+	// responder com v ou f
+	// já receber a cada questao se acertou ou errou
+
+	// salvar respostas e LocalDate no banco de dados
+	// ao final receber seu resultado e voltar ao menu inicial
+	// se clicar em 1 ele pode fazer tudo de novo
+	// se clicar em 2 ele pode obter todos os resultados das jogadas no banco de
+	// dados
+	// EM ORDEM DECRESCENTE PELO NUMERO DE ACERTOS
+	// se clicar em 0 sai do programa (close/encerrar)
+}

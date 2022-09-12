@@ -1,0 +1,13 @@
+CREATE TABLE questoes(questao VARCHAR(255) NOT NULL,alternativa VARCHAR(255) NOT NULL,ativa VARCHAR(255) NOT NULL, PRIMARY KEY(questao));
+
+INSERT INTO questoes (questao,alternativa,ativa) VALUES ("Harry Potter nasceu em 1980",true,false);
+INSERT INTO questoes (questao,alternativa,ativa) VALUES ("O formato da cicatriz que Harry tinha na testa era um círculo",false,false);
+INSERT INTO questoes (questao,alternativa,ativa) VALUES ("A casa de Hogwarts a qual Hermione pertencia era Sonserina",false,false);
+INSERT INTO questoes (questao,alternativa,ativa) VALUES ("O melhor amigo do Harry era o Rony",true,false);
+INSERT INTO questoes (questao,alternativa,ativa) VALUES ("No prédio de Hogwarts existem 142 escadas",true,false);
+INSERT INTO questoes (questao,alternativa,ativa) VALUES ("'The Quibbler' é um jogo de Hogwarts",false,false);
+INSERT INTO questoes (questao,alternativa,ativa) VALUES ("O esporte mais importante de Hogwarts é o Quadribol",true,false);
+INSERT INTO questoes (questao,alternativa,ativa) VALUES ("Professor Snape é o diretor casa de Hogwarts chamada Grifinória",false,false);
+INSERT INTO questoes (questao,alternativa,ativa) VALUES ("O instrumento mágico que os bruxos usam para canalizar seu poder e fazer magias é uma varinha",true,false);
+INSERT INTO questoes (questao,alternativa,ativa) VALUES ("O verdadeiro vilão de Harry Potter é o Dumbledore",false,false);
+

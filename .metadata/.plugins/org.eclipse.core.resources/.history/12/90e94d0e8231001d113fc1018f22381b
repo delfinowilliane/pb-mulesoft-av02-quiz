@@ -1,0 +1,27 @@
+package br.com.pbmulesoft.quiz.menu;
+
+import java.util.Scanner;
+
+public class Menu {
+	
+	public static void menu() {
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("Seja bem vindo ao fandom quiz sobre Harry Potter");
+		System.out.println();
+		System.out.println("Nome do jogador: ");
+		String jogador = scanner.nextLine();
+
+	}
+		
+	//ele joga uma vez
+	
+//	do { 
+//		
+//	} while (condition);
+//	
+//	System.out.println("Opções: ");
+//	System.out.println("\n 1 - Jogar novamente \n 2 - Ver Placar \n 3 - Sair");	
+	
+}

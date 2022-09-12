@@ -1,0 +1,78 @@
+package br.com.pbmulesoft.quiz.programa;
+
+import java.util.Scanner;
+import br.com.pbmulesoft.quiz.modelo.Resultado;
+
+public class Programa {
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Seja bem vindo ao fandom quiz sobre Harry Potter");	
+		System.out.println();
+		System.out.println("Nome do jogador: ");		
+		String nome = scanner.nextLine();
+		
+		
+		int pontos = 0;
+		
+		
+		String[] questions = new String[10];
+		
+		questions[0] = "Harry Potter nasceu em 1980"; //V
+		questions[1] = "O formato da cicatriz que Harry tinha na testa era um círculo"; //F
+		questions[2] = "A casa de Hogwarts a qual Hermione pertencia era Sonserina"; //F
+		questions[3] = "O melhor amigo do Harry era o Rony"; //V
+		questions[4] = "No prédio de Hogwarts existem 142 escadas"; //V
+		questions[5] = "'The Quibbler' é um jogo de Hogwarts"; //F
+		questions[6] = "O esporte mais importante de Hogwarts é o Quadribol"; //V
+		questions[7] = "Professor Snape é o diretor casa de Hogwarts chamada Grifinória"; //F
+		questions[8] = "O instrumento mágico que os bruxos usam para canalizar seu poder e fazer magias é uma varinha"; //V
+		questions[9] = "O verdadeiro vilão de Harry Potter é o Dumbledore"; //F
+		
+		String[] answers = new String[10];
+		
+		answers[0] = "1980";
+		answers[1] = "RAIO";
+		answers[2] = "GRIFINORIA";
+		answers[3] = "RONY";
+		answers[4] = "142";
+		answers[5] = "JORNAL";
+		answers[6] = "QUADRIBOL";
+		answers[7] = "SONSERINA";
+		answers[8] = "VARINHA";//
+		answers[9] = "VOLDEMORT";
+		
+		
+
+		//menu (que pode virar uma classe)
+		//setar seleção de perguntas que estão no banco de dados (boolean active)
+		//responder com v ou f
+		//já receber a cada questao se acertou ou errou
+				
+
+		for (int i = 0; i < questions.length; i++) {
+			System.out.println(questions[i]);
+			System.out.println("Digite sua resposta: ");
+			String answer = scanner.nextLine().toUpperCase();
+
+			if (answer.equals(answers[i])) {
+				pontos++;
+			}
+		}
+		
+		System.out.println("Jogador: " + nome);
+		System.out.println("Acertos: " + pontos);
+		System.out.println("Erros: " + (10 - pontos));
+		
+		scanner.close();		
+	
+		//salvar respostas e LocalDate no banco de dados
+		//ao final receber seu resultado e voltar ao menu inicial
+		//se clicar em 1 ele pode fazer tudo de novo
+		//se clicar em 2 ele pode obter todos os resultados das jogadas no banco de dados
+		//EM ORDEM DECRESCENTE PELO NUMERO DE ACERTOS
+		//se clicar em 0 sai do programa (close/encerrar)
+	}
+	
+}

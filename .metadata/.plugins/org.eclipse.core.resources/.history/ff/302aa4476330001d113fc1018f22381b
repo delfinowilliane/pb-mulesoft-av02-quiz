@@ -1,0 +1,33 @@
+package br.com.pbmulesoft.quiz.modelo;
+
+import java.time.LocalDate;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Resultados")
+public class Resultado { //isso vai ser acessado pela opção 2 do menu
+	//ordem decrescente pelos acertos
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String jogador;
+	private int acertos;
+	private int erros;
+	private LocalDate dataDaPartida = LocalDate.now();;
+	
+	public Resultado() { //construtor default
+	}
+	
+	public Resultado(String jogador ) { 
+		//O que vai receber do usuario: nome
+		//quais perguntas ele vai querer responder
+	}
+
+	
+}

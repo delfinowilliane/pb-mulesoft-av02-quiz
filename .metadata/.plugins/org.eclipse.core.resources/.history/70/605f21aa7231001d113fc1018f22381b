@@ -1,0 +1,7 @@
+package menu;
+
+public class Jogar {
+	1 Jogar novamente;
+	2 Ver o Placar;
+	3 Sair
+}

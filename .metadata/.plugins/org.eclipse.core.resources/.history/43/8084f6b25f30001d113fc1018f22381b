@@ -1,0 +1,55 @@
+package br.com.pbmulesoft.quiz.modelo;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Resultados")
+public class Resultado {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String question;
+	private boolean verdadeiro;
+	private boolean ativo;
+	
+	public Resultado() { //construtor default
+	}
+	
+	public Resultado(String question) { 
+	//O que vai receber do usuario: quais perguntas ele vai querer responder
+	//perguntas
+	//respostas
+	//alternativas
+	}
+
+	public String getQuestion() {//ativar perguntas a serem usadas
+		return question;
+	}
+
+	public void setQuestion(String question) {//salvar as perguntas direto no banco de dados
+		this.question = question;
+	}
+
+	public boolean isVerdadeiro() {
+		return verdadeiro;
+	}
+
+	public void setVerdadeiro(boolean verdadeiro) {
+		this.verdadeiro = verdadeiro;
+	}
+
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
+	
+	
+}

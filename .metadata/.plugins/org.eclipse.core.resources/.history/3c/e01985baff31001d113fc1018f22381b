@@ -1,0 +1,45 @@
+package br.com.pbmulesoft.quiz;
+
+import java.util.Scanner;
+
+public class ProgramaTeste {
+	
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Seja bem vindo ao fandom quiz sobre Harry Potter");	
+		System.out.println();
+		System.out.println("Nome do jogador: ");
+		String jogador = scan.nextLine();
+		System.out.println("Opções: ");
+		System.out.println("\n 1 Jogar \n 2 Ver Placar \n 0 Sair");
+		
+		int escolha = scan.nextInt();
+		int opcao1 = 1 ;
+		int opcao2 = 2 ;
+		int opcao3 = 0 ;
+		
+		
+		if (escolha == opcao ) {
+						
+		}
+		
+		else if (escolha == 2) {
+			
+		}
+		
+		
+	}
+
+//	método menu
+	public static void menu() {
+		
+	}
+
+//	métodoquiz
+	public static void quiz() {
+		
+	}
+
+	
+}

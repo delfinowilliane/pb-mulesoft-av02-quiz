@@ -1,0 +1,21 @@
+package br.com.pbmulesoft.quiz.programa;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import DAO.QuestaoDao;
+import br.com.pbmulesoft.quiz.modelo.Questao;
+import br.com.pbmulesoft.quiz.util.JPAUtil;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		
+		EntityManager em = JPAUtil.getEntityManager();
+		QuestaoDao questaodao = new QuestaoDao(em);
+		
+		em.persist(questaodao);
+		em.getTransaction().commit();
+	}
+}

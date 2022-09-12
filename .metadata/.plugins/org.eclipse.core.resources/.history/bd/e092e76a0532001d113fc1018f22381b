@@ -1,0 +1,82 @@
+package br.com.pbmulesoft.quiz;
+
+import java.util.List;
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+
+import org.hibernate.internal.build.AllowSysOut;
+
+import DAO.QuestaoDao;
+import br.com.pbmulesoft.quiz.modelo.Questao;
+import br.com.pbmulesoft.quiz.modelo.Resultado;
+import br.com.pbmulesoft.quiz.util.JPAUtil;
+
+public class ProgramaTeste {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+
+		System.out.println("Seja bem vindo ao fandom quiz sobre Harry Potter");
+		System.out.println();
+		System.out.println("Opções: ");
+		System.out.println("\n 1 - Jogar \n 2 - Ver Placar \n 0 - Sair");
+
+		int escolha = scan.nextInt();
+
+		switch (escolha) {
+		case 1:
+			EntityManager em = JPAUtil.getEntityManager();
+			Resultado jogador = new Resultado();
+			System.out.println("Nome do jogador: ");
+			jogador.setJogador(scan.next());
+
+			jogador.setAcertos(0);
+			jogador.setErros(0);
+
+			QuestaoDao questaoDao = new QuestaoDao(em);
+			List<Questao> selecionarQuestoes = questaoDao.todasAsQuestoes();
+
+			selecionarQuestoes.forEach(pergunta -> {
+				System.out.println(
+						"Verdadeiro(v) ou Falso(f)? Responda com o número correspondente: " + pergunta.getQuestao());
+				String resposta = scan.next();
+				
+				boolean setResposta = true;
+				
+				if(resposta == "v") {
+					setResposta = true;
+					if(setResposta = true) {
+						pergunta.isVerdadeira();
+						jogador.setAcertos(jogador.getAcertos()+1);
+					}
+				} else if (resposta == "f") {
+					setResposta = false;
+					if (setResposta = false) {
+						jogador.setErros(jogador.getErros()+1);
+					}
+				} else {
+					System.out.println("Opção inexistente");
+				}
+				
+				
+			});
+
+			break;
+		case 2:
+			// placar
+			break;
+		case 0:
+			// Saindo...
+			break;
+		default:
+			// Número Inválido;
+		}
+	}
+
+//	métodoquiz
+	public static void quiz() {
+
+	}
+
+}

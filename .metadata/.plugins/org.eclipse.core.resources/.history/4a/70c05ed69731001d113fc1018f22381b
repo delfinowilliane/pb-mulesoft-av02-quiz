@@ -1,0 +1,6 @@
+package br.com.pbmulesoft.quiz.menu;
+
+public class VerificarRespostas {
+
+	public boolean[] 
+}

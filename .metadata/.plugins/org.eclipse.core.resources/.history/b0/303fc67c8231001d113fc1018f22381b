@@ -1,0 +1,26 @@
+package br.com.pbmulesoft.quiz.menu;
+
+import java.util.Scanner;
+
+public class Menu {
+	
+	public static void menu() {
+		Scanner scanner =  new Scanner(System.in);
+		
+		AtivarDesativarQuestoes selecao = new AtivarDesativarQuestoes();
+		selecao.desativar();
+		
+
+		
+	}
+		
+	//ele joga uma vez
+	
+//	do { 
+//		
+//	} while (condition);
+//	
+//	System.out.println("Opções: ");
+//	System.out.println("\n 1 - Jogar novamente \n 2 - Ver Placar \n 3 - Sair");	
+	
+}

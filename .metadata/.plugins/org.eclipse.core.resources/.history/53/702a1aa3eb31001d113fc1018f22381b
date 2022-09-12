@@ -1,0 +1,14 @@
+package br.com.pbmulesoft.quiz.menu;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import br.com.pbmulesoft.quiz.util.JPAUtil;
+
+public class Respostas {
+	
+	EntityManager em = JPAUtil.getEntityManager();
+	
+	List<Questao> respostas = questoes.SelecaoQuestoes();
+}

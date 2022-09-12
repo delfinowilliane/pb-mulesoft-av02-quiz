@@ -1,0 +1,10 @@
+package br.com.pbmulesoft.quiz.questoes;
+
+public class Questao {
+
+	private Long id;
+	private String question;
+	private boolean verdadeiro;
+	private boolean ativo;
+	
+}

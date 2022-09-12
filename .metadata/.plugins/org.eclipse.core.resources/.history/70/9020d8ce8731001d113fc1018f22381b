@@ -1,0 +1,13 @@
+package br.com.pbmulesoft.quiz.programa;
+
+import javax.persistence.EntityManager;
+
+import br.com.pbmulesoft.quiz.modelo.Questao;
+import br.com.pbmulesoft.quiz.util.JPAUtil;
+
+public class Teste {
+	
+	EntityManager em = JPAUtil.getEntityManager();
+	String jpql = "SELECT q FROM Questao q";
+	return em.createQuery(jpql, Questao.class).getResultList();
+}

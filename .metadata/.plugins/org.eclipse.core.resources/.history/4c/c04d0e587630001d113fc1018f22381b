@@ -1,0 +1,30 @@
+package DAO;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Persistence;
+
+import br.com.pbmulesoft.quiz.modelo.Questao;
+
+public class QuestaoDao {
+
+	private EntityManager em;
+	
+	public QuestaoDao(EntityManager em) {
+		this.em=em;
+	}
+	
+	public void cadastrar(Questao questao) {
+		this.em.persist(questao);
+	}
+
+	public List<Questao> listaQuestoes(){
+		String  jpql= "SELECT q FROM Questao q";
+		return  em.createQuery(jpql,Questao.class).getResultList();
+	}
+	
+	
+	
+}
+

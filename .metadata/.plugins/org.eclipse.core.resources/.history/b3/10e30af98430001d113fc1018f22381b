@@ -1,0 +1,53 @@
+package br.com.pbmulesoft.quiz.modelo;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Questões")
+public class Questao {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	@Column(name = "questao")
+	private String questao;
+	@Column(name = "alternativa")
+	private boolean verdadeira;
+	@Column(name = "questão ativa")
+	private boolean ativa;
+
+	public Questao(String questao, boolean verdadeira) {
+		this.questao = questao;
+		this.verdadeira = verdadeira;
+	}
+
+	public String getQuestao() {
+		return questao;
+	}
+
+	public void setQuestao(String questao) {
+		this.questao = questao;
+	}
+
+	public boolean isVerdadeira() {
+		return verdadeira;
+	}
+
+	public void setVerdadeira(boolean verdadeira) {
+		this.verdadeira = verdadeira;
+	}
+
+	public boolean isAtiva() {
+		return ativa;
+	}
+
+	public void setAtiva(boolean ativa) {
+		this.ativa = ativa;
+	}
+
+}

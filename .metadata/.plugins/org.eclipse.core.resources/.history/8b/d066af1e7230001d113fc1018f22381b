@@ -1,0 +1,12 @@
+package br.com.pbmulesoft.quiz;
+
+import javax.persistence.EntityManager;
+
+import br.com.pbmulesoft.quiz.modelo.Questao;
+
+public class InserirQuestoesDB {
+	public static void main(String[] args) {
+		Questao questao1 = new Questao("Harry Potter nasceu em 1980","true","false");
+		
+	}
+}

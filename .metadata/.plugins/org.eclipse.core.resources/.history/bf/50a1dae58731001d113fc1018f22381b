@@ -1,0 +1,12 @@
+package br.com.pbmulesoft.quiz.programa;
+
+import javax.persistence.EntityManager;
+
+import br.com.pbmulesoft.quiz.util.JPAUtil;
+
+public class Teste {
+	
+	EntityManager em = JPAUtil.getEntityManager();
+	
+	
+}

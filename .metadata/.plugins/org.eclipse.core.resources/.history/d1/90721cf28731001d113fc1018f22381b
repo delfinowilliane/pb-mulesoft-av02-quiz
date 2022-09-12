@@ -1,0 +1,18 @@
+package br.com.pbmulesoft.quiz.programa;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import br.com.pbmulesoft.quiz.modelo.Questao;
+import br.com.pbmulesoft.quiz.util.JPAUtil;
+
+public class Teste {
+	
+	EntityManager em = JPAUtil.getEntityManager();
+	
+	List<Questao> todasAsQuestoes() {
+		return todasAsQuestoes();
+	}
+	
+}

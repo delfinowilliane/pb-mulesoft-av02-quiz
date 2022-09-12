@@ -1,0 +1,15 @@
+package br.com.pbmulesoft.quiz;
+
+import java.util.Scanner;
+
+public class ProgramaTeste {
+
+	Scanner scan = new Scanner(System.in);
+	
+//	método menu
+		
+//	métodoquiz
+	
+//	método salvarplacar
+	
+}

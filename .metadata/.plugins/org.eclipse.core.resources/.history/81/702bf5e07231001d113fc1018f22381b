@@ -1,0 +1,21 @@
+package menu;
+
+public class Jogar {
+	
+	private void JogarNovamente() {
+		// TODO Auto-generated method stub
+
+	}
+	
+	private void VerPlacar() {
+		// TODO Auto-generated method stub
+
+	}
+	
+	private void Sair() {
+		// TODO Auto-generated method stub
+
+	}
+
+
+}

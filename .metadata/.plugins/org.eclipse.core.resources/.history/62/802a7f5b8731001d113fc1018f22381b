@@ -1,0 +1,50 @@
+package br.com.pbmulesoft.quiz.programa;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import DAO.QuestaoDao;
+import br.com.pbmulesoft.quiz.modelo.Questao;
+import br.com.pbmulesoft.quiz.util.JPAUtil;
+
+public class Teste {
+	
+	public static void main(String[] args) {
+
+		public void ativar(Questao q) {
+			
+			EntityManager em = JPAUtil.getEntityManager();
+			QuestaoDao questaoDao = new QuestaoDao(em);
+
+			em.getTransaction().begin();
+			q = em.merge(q);
+			q.setAtiva(true);
+			em.getTransaction().commit();
+			
+
+		}
+
+//		public void desativar(Questao q) {
+//
+//			List<Questao> todas = questaoDao.todasAsQuestoes();
+//			em.clear();
+//			Questao questao = new Questao();
+//			em.getTransaction();
+//
+//			em.getTransaction().begin();
+//			q = em.merge(q);
+//			q.setAtiva(true);
+//			em.getTransaction().begin();
+//
+//			for (int i = 0; i < todas.size(); i++) {
+//				questao = em.merge(todas.get(i));
+//				questao.setAtiva(false);
+//			}
+//
+//			em.getTransaction().commit();
+//
+//		}
+//
+	}
+}

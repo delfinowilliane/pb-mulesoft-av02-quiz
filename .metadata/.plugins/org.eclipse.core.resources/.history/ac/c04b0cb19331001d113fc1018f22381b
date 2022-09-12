@@ -1,0 +1,22 @@
+package br.com.pbmulesoft.quiz.menu;
+
+import javax.persistence.EntityManager;
+
+import DAO.ResultadoDao;
+import br.com.pbmulesoft.quiz.modelo.Resultado;
+import br.com.pbmulesoft.quiz.util.JPAUtil;
+
+public class SalvarResultados {
+
+	EntityManager em = JPAUtil.getEntityManager();
+	ResultadoDao resultadoDao = new ResultadoDao(em);
+
+	public void SalvarResultado(Resultado r) {
+
+		this.em.getTransaction().begin();
+		r = this.em.merge(r);
+		this.em.persist(r);
+		this.em.getTransaction().commit();
+
+	}
+}
