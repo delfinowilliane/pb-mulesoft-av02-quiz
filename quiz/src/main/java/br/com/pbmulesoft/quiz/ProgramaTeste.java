@@ -41,7 +41,7 @@ public class ProgramaTeste {
 				selecionarQuestoes.forEach(pergunta -> {
 					System.out.println("Verdadeiro(v) ou Falso(f)? Responda com a letra correspondente: "
 							+ pergunta.getQuestao());
-					String resposta = scan.next();
+					String resposta = scan.next().toLowerCase();
 
 					boolean setResposta = true;
 
