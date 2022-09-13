@@ -18,17 +18,18 @@ public class ProgramaTeste {
 			System.out.println("Seja bem vindo ao fandom quiz sobre Harry Potter");
 			System.out.println();
 			System.out.println("Opções: ");
-			System.out.println("\n 1 - Jogar \n 2 - Ver Placar \n 0 - Sair");
-
+			System.out.println("1 - Jogar");
+			System.out.println("2 - Ver Placar");
+			System.out.println("0 - Sair");
 			int escolha = scan.nextInt();
+						
 			EntityManager em = JPAUtil.getEntityManager();
 			Resultado jogador = new Resultado();
 			ResultadoDao resultadoDao = new ResultadoDao(em);
 			ResultadoDao verPlacar = new ResultadoDao(em);
 			
 			switch (escolha) {
-			case 1:
-				
+			case 1: 
 				System.out.println("Nome do jogador: ");
 				jogador.setJogador(scan.next());
 
@@ -61,7 +62,7 @@ public class ProgramaTeste {
 					}
 
 				});
-
+			
 				em.getTransaction().begin();
 				resultadoDao.salvar(jogador);
 				em.getTransaction().commit();
